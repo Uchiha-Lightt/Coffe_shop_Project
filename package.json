@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  },
+  "scripts": {
+    "arman": "npx @tailwindcss/cli -i ./src/input.css -o ./public/styles.css --watch"
+  }
+}

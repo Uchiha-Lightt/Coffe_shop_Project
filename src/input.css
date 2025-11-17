@@ -1,0 +1,257 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base{
+
+    @font-face {
+            font-family: dana-bold;
+            src: url(../public/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2);
+            font-display: swap;
+        }
+    @font-face {
+            font-family: dana-medium;
+            src: url(../public/fonts/Dana/woff2/DanaFaNum-Medium.woff2);
+            font-display: swap;
+        }
+    @font-face {
+            font-family: dana-regular;
+            src: url(../public/fonts/Dana/woff2/DanaFaNum-Regular.woff2);
+            font-display: swap;
+        }
+
+    @font-face {
+            font-family: morabba-bold;
+            src: url(../public/fonts/Morabba/woff2/Morabba-Bold.woff2);
+            font-display: swap;
+        }
+    @font-face {
+            font-family: morabba-light;
+            src: url(../public/fonts/Morabba/woff2/Morabba-Light.woff2);
+            font-display: swap;
+        }
+    @font-face {
+            font-family: morabba-medium;
+            src: url(../public/fonts/Morabba/woff2/Morabba-Medium.woff2);
+            font-display: swap;
+        }
+
+}
+
+@theme{
+    --color-brown-100:#ECE0D1;
+    --color-brown-300:#DBC1AC;
+     --color-brown-600:#967259;
+     --color-brown-900:#634832;
+
+     --font-morabba-bold: morabba-bold;
+     --font-morabba-light: morabba-light;
+     --font-morabba-medium:morabba-medium;
+
+     --font-dana-regular: dana-regular;
+     --font-dana-bold: dana-bold;
+     --font-dana-medium:dana-medium;
+
+     --breakpoint-xs:480px;
+
+     --shadow-normal:0px 1px 10px rgba(0,0,0,0.05);
+     --radius-4xl:2rem;
+
+     --tracking-tightest:-0.065em;
+
+     --bg-home-mobile:home-mobile;
+     --bg-home-desktop:home-desktop;
+
+}
+
+@layer utilities{
+    .ltr{
+        direction: ltr;
+        text-align: left;
+    }
+}
+
+@layer components{
+
+    .submenu__menu{
+        padding-right: 10px;
+        position:relative;
+        color: #FDBA74;
+    }
+
+    .submenu__menu::after{
+        content: "";
+        position: absolute;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 4px;
+        height: 4px;
+        background-color: #FDBA74;
+        margin: auto;
+    }  
+
+    .submenu{
+        @apply hidden flex-col gap-y-3 pr-10 mt-3 text-sm text-zinc-600 dark:text-white;
+    }
+
+    .submenu--open{
+        display: flex;
+    }
+
+    .overlay{
+        @apply md:hidden invisible opacity-0 fixed inset-0 w-full h-full bg-black/40 z-10 transition-all;
+    }
+
+    .overlay--visible{
+       @apply visible opacity-100;
+    }
+
+    .circle{
+        @apply flex justify-center items-center rounded-full border ;
+    }
+
+    .circle-top{
+        @apply w-[203px] h-[203px] border-white/25 hidden md:flex translate-y-2/4 absolute bottom-0 right-0 left-0 mx-auto; 
+    }
+
+    .circle-mid{
+        @apply w-[145px] h-[145px] border-white/50; 
+    }
+
+    .circle-bottom{
+        @apply w-[95px] h-[95px] border-white/80; 
+    }
+
+    @media screen and (min-width:1280px){
+
+        html.dark .products{
+            background-image:url(../public/images/products-bg.png) ;
+            }
+        
+
+        .products{
+            @apply xl:bg-[url('../public/images/products-bg.png')];
+            background:linear-gradient(rgba(243,244,246, .65),rgba(243,244,246, .65)), url(../public/images/products-bg.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .section-link{
+        @apply text-orange-300 flex items-center text-base md:text-xl md:gap-x-1 pr-3 pl-1 rounded-md tracking-tightest h-10 md:hover:bg-orange-300/20 transition-colors;
+    }
+
+    .section-part{
+        @apply bg-white dark:bg-zinc-700 rounded-2xl shadow-normal p-2 md:p-5;
+    }
+
+    .category-banner-items1{
+            background:linear-gradient(270deg,rgba(0,0,0,.6) 33.85%,rgba(0,0,0,.1) 100% ), url(../public/images/categories/category-right.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+    }
+
+    .category-banner-items2{
+            background:linear-gradient(270deg,rgba(0,0,0,.6) 33.85%,rgba(0,0,0,.1) 100% ), url(../public/images/categories/category-left.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+    }
+
+    .swiper-button-prev-custom{
+        @apply flex justify-center items-center size-9 md:size-11 rounded-full shadow-normal bg-white dark:bg-zinc-700 text-zinc-700 dark:text-white transition-all hover:bg-gray-300 dark:hover:bg-white dark:hover:text-zinc-700 hover:cursor-pointer;
+    }
+
+    .swiper-button-next-custom{
+        @apply flex justify-center items-center size-9 md:size-11 rounded-full shadow-normal bg-white dark:bg-zinc-700 text-zinc-700 dark:text-white transition-all hover:bg-gray-300 dark:hover:bg-white dark:hover:text-zinc-700 hover:cursor-pointer;
+    }
+
+    .background{
+        background: linear-gradient(to right,rgba(16, 185, 129, 1),rgba(5, 150, 105, 1));
+        box-shadow: rgba(0, 0, 0, 0.05);
+        border-radius: 16px;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+    }
+
+    .gradiant{
+        background: linear-gradient(to right,rgba(254, 215, 170, 1),rgba(253, 186, 116, 1));
+    }
+
+    .layer-blog{
+        background: linear-gradient(to right,rgba(254, 215, 170, .8),rgba(253, 186, 116, .8));
+    }
+
+    .Services{
+        @apply relative;
+    }
+
+    .Services::after,
+    .Services::before{
+        content: "";
+        display: block;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        background-color: #D1D5DB;
+    }
+
+        @media screen and (min-width: 480px) {
+        .Services::after,
+        .Services::before{
+            content: none;
+        }
+    }
+
+    html.dark .Services::after,
+    html.dark .Services::before{
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .Services::after{
+        height: calc(100% + 20px);
+        width: 1px;
+    }
+    .Services::before{
+        width: calc(100% - 2rem);
+        height: 1px;
+    }
+
+}
+
+@utility container{
+    @apply md:w-[1280px] mx-auto px-4 lg:px-2.5 ;
+}
+
+@utility bg-mobile{
+    @apply bg-[url('images/headerBgMobile.webp')]
+}
+
+@utility bg-desktop{
+    @apply bg-[url('images/headerBgDesktop.png')]
+}
+
+
+
+.variant{
+    display: inline-block;
+    transition: all 150ms ease;
+    -webkit-transition: all 150ms ease;
+    -moz-transition: all 150ms ease;
+    -ms-transition: all 150ms ease;
+    -o-transition: all 150ms ease;
+}
+.variant:hover{
+    color: #FDBA74;
+}
+
+.line-hight{
+    line-height: 56px;
+}
