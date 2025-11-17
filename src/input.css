@@ -11,28 +11,28 @@
         }
     @font-face {
             font-family: dana-medium;
-            src: url(../fonts/Dana/woff2/DanaFaNum-Medium.woff2);
+            src: url(./fonts/Dana/woff2/DanaFaNum-Medium.woff2);
             font-display: swap;
         }
     @font-face {
             font-family: dana-regular;
-            src: url(../fonts/Dana/woff2/DanaFaNum-Regular.woff2);
+            src: url(./fonts/Dana/woff2/DanaFaNum-Regular.woff2);
             font-display: swap;
         }
 
     @font-face {
             font-family: morabba-bold;
-            src: url(../fonts/Morabba/woff2/Morabba-Bold.woff2);
+            src: url(./fonts/Morabba/woff2/Morabba-Bold.woff2);
             font-display: swap;
         }
     @font-face {
             font-family: morabba-light;
-            src: url(../fonts/Morabba/woff2/Morabba-Light.woff2);
+            src: url(./fonts/Morabba/woff2/Morabba-Light.woff2);
             font-display: swap;
         }
     @font-face {
             font-family: morabba-medium;
-            src: url(../fonts/Morabba/woff2/Morabba-Medium.woff2);
+            src: url(./fonts/Morabba/woff2/Morabba-Medium.woff2);
             font-display: swap;
         }
 
@@ -131,13 +131,13 @@
     @media screen and (min-width:1280px){
 
         html.dark .products{
-            background-image:url(../images/products-bg.png) ;
+            background-image:url(./images/products-bg.png) ;
             }
 
 
         .products{
             @apply xl:bg-[url('./images/products-bg.png')];
-            background:linear-gradient(rgba(243,244,246, .65),rgba(243,244,246, .65)), url(../images/products-bg.png);
+            background:linear-gradient(rgba(243,244,246, .65),rgba(243,244,246, .65)), url(./images/products-bg.png);
             background-size: 100%;
             background-repeat: no-repeat;
         }
